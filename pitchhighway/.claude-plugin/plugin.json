@@ -8,5 +8,18 @@
     "url": "https://pitchhighway.com"
   },
   "homepage": "https://pitchhighway.com/mcp",
-  "keywords": ["singing", "voice", "pitch", "music", "practice"]
+  "keywords": [
+    "singing",
+    "voice",
+    "pitch",
+    "music",
+    "practice"
+  ],
+  "displayName": "PitchHighway",
+  "repository": "https://github.com/gabrielpolyy/pitchhighway-plugins",
+  "privacyPolicyUrl": "https://pitchhighway.com/privacy",
+  "supportUrl": "https://pitchhighway.com/support",
+  "documentationUrl": "https://pitchhighway.com/mcp",
+  "termsOfServiceUrl": "https://pitchhighway.com/tos",
+  "license": "ISC"
 }
