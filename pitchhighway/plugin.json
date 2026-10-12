@@ -1,0 +1,92 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pitchhighway",
+  "version": "1.0.0",
+  "description": "Learn to sing your favorite songs. Read your PitchHighway vocal range, songs, practice attempts and note-level pitch reports, and get coaching on what to practice next.",
+  "author": {
+    "name": "PitchHighway",
+    "email": "support@pitchhighway.com",
+    "url": "https://pitchhighway.com"
+  },
+  "homepage": "https://pitchhighway.com/mcp",
+  "keywords": ["singing", "voice", "pitch", "music", "practice"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "PitchHighway",
+        "shortDescription": "Coaching from your singing practice data",
+        "longDescription": "PitchHighway turns a song you love into a practice journey with real-time pitch feedback. This plugin lets you ask about your own practice: your measured vocal range, your songs and how they fit your voice, your recent attempts, and note-level pitch reports from your runs. It only reads data from the PitchHighway account you connect, and it never exposes audio.",
+        "developerName": "PitchHighway",
+        "category": "Lifestyle",
+        "capabilities": ["Read vocal range", "Read songs", "Read practice history", "Read pitch reports"],
+        "websiteURL": "https://pitchhighway.com",
+        "supportURL": "https://pitchhighway.com/support",
+        "privacyPolicyURL": "https://pitchhighway.com/privacy",
+        "termsOfServiceURL": "https://pitchhighway.com/tos",
+        "defaultPrompt": [
+          "What is my vocal range, and which of my songs fit it best?",
+          "How did my last run go? Which notes did I miss?",
+          "What should I practice next?"
+        ],
+        "brandColor": "#F5A623",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Vocal range summary",
+              "prompt": "What is my vocal range?",
+              "tools_triggered": "get_me",
+              "expected_behavior": "States the measured lowest and highest notes and the span in semitones, and says when the range was measured."
+            },
+            {
+              "description": "Song fit for the user's voice",
+              "prompt": "Which of my songs fit my voice best?",
+              "tools_triggered": "get_me, list_songs",
+              "expected_behavior": "Compares each ready song's note range with the user's range and ranks the songs, mentioning any octave shift the app applies."
+            },
+            {
+              "description": "Last run feedback",
+              "prompt": "How did my last run go?",
+              "tools_triggered": "list_runs, get_run",
+              "expected_behavior": "Reports score, on-pitch rate and the most-missed notes with sharp or flat lean, and says when microphone input was unreliable."
+            },
+            {
+              "description": "Practice trend",
+              "prompt": "Am I improving on my latest song this week?",
+              "tools_triggered": "list_songs, list_attempts",
+              "expected_behavior": "Uses attempt rows for that song to describe the trend with dates and sample size, without overstating a small number of attempts."
+            },
+            {
+              "description": "Next practice step",
+              "prompt": "What should I practice next?",
+              "tools_triggered": "list_songs, get_song",
+              "expected_behavior": "Names one concrete part or drill of the current song with its current score, and links to https://pitchhighway.com/app to practice."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Voice talent judgement",
+              "prompt": "Based on my scores, do I have a talent for singing or am I tone deaf?"
+            },
+            {
+              "description": "Unsupported deletion",
+              "prompt": "Delete all my songs and my practice history."
+            },
+            {
+              "description": "Medical inference",
+              "prompt": "Do my pitch reports show that my vocal cords are damaged?"
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or process payments."
+      },
+      "publication": {
+        "release_notes": "Initial release: vocal range, songs, practice attempts and note-level pitch reports from your PitchHighway account."
+      }
+    }
+  }
+}

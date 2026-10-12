@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "pitchhighway": {
+      "type": "http",
+      "url": "https://pitchhighway.com/mcp"
+    }
+  }
+}

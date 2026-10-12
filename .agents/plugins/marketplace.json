@@ -1,0 +1,20 @@
+{
+  "name": "pitchhighway",
+  "interface": {
+    "displayName": "PitchHighway"
+  },
+  "plugins": [
+    {
+      "name": "pitchhighway",
+      "source": {
+        "source": "local",
+        "path": "./pitchhighway"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Lifestyle"
+    }
+  ]
+}

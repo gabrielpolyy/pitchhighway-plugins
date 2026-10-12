@@ -1,0 +1,12 @@
+{
+  "name": "pitchhighway",
+  "version": "1.0.0",
+  "description": "Learn to sing your favorite songs. Connects Claude to your PitchHighway account: vocal range, songs, practice attempts and note-level pitch reports, plus a singing-coach skill.",
+  "author": {
+    "name": "PitchHighway",
+    "email": "support@pitchhighway.com",
+    "url": "https://pitchhighway.com"
+  },
+  "homepage": "https://pitchhighway.com/mcp",
+  "keywords": ["singing", "voice", "pitch", "music", "practice"]
+}
