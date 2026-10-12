@@ -2,7 +2,7 @@
   "mcpServers": {
     "pitchhighway": {
       "type": "http",
-      "url": "https://pitchhighway.com/mcp"
+      "url": "https://pitchhighway.com/mcp/readonly"
     }
   }
 }

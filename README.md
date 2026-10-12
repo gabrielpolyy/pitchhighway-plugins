@@ -20,7 +20,8 @@ It uses practice data without making claims about vocal health or talent.
 ```
 
 Connect your PitchHighway account when Claude requests authentication.
-The plugin uses `https://pitchhighway.com/mcp`.
+The plugin uses `https://pitchhighway.com/mcp/readonly`.
+This connection reads practice data. It cannot upload songs or generate media.
 
 ## Example questions
 
